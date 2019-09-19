@@ -1,0 +1,14 @@
+#backframe
+  .left-contents
+    .left-header
+      .left-header__adress
+        top
+    .menus
+      .menu
+        .books
+          - @books.each do |book|
+            .book
+              .book__title
+                = book.title
+              .book__character
+                test man

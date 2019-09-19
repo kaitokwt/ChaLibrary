@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   root 'characters#index'
 
   resources :users, only: [:edit, :update]
+  resources :books, only: [:new, :create] do
+    resources :characters, only: [:index, :create]
+  end
 end
