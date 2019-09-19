@@ -12,4 +12,19 @@
   padding: 0 10px;
   background-color: #fcfcfc;
   height: calc(100vh - 80px);
+  .menu {
+    .books {
+      .book {
+        p {
+          cursor: pointer; padding: 10px;
+        }
+        &__title {
+
+        }
+        &__character {
+          display: none;
+        }
+      }
+    }
+  }
 }

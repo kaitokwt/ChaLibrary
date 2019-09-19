@@ -1,0 +1,22 @@
+.main-header
+  .personal
+    .personal__box
+      %ul
+        %li.login-name
+          = current_user.name
+        %li.create-acount
+          = link_to new_user_registration_path do
+            アカウント作成
+        %li.log-in
+          = link_to new_user_session_path do
+            ログイン
+  .naviframe
+    .search
+      %input.search__filed
+      .search__btn 検索
+    .navimenu
+      .navimenu__post
+        = link_to new_book_path do
+          投稿
+      .navimenu__edit
+        編集
