@@ -1,2 +1,61 @@
 .wrapper
-  hello
+  #backframe
+    .left-contents
+      .left-header
+        .left-header__adress
+          sample > キャラクター
+      .menus
+        .menu
+          .books
+            .book
+              .book__title
+                sample
+              .book__character
+                test man
+    .main
+      .main-header
+        .personal
+          .personal__box
+            %ul
+              %li.create-acount
+                = link_to new_user_registration_path do
+                  アカウント作成
+              %li.log-in
+                = link_to new_user_session_path do
+                  ログイン
+        .naviframe
+          .search
+            %input.search__filed
+            .search__btn 検索
+          .navimenu
+            .navimenu__post
+              投稿
+            .navimenu__edit
+              編集
+      .main-contents
+        .main-contents__title
+          .main-contents__title__book
+            sample
+          .main-contents__title__chara
+            キャラクター
+        .main-content
+          .character
+            .caption
+              .caption__image
+                画像
+              .caption__intro
+                .caption__intro__name
+                  test man
+                .caption__intro__age
+                  年齢：20
+                .caption__intro__sex
+                  性別：男
+                .caption__intro__speaces
+                  種族：人間
+                .caption__intro__belong
+                  所属：日本
+            .Explanation
+              .Explanation__text-title
+                人物
+              .Explanation__text
+                テストのために生まれた存在
