@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'characters#index'
+  root 'books#index'
 
   resources :users, only: [:edit, :update]
-  resources :books, only: [:new, :create] do
+  resources :books, only: [:index, :show, :new, :create] do
     resources :characters, only: [:index, :create]
   end
 end

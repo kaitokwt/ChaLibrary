@@ -7,8 +7,14 @@
       .menu
         .books
           - @books.each do |book|
-            .book
-              .book__title
-                = book.title
-              .book__character
-                test man
+            %ul.book
+              %li
+                %p.book__title
+                  = book.title
+                %ul.book__character
+                  %li.book__characters--name
+                    test man
+                  %li.book__characters--name
+                    sample man
+                  %li.book__characters--name
+                    debug  man
