@@ -19,4 +19,5 @@
         = link_to new_book_path do
           投稿
       .navimenu__edit
-        編集
+        = link_to edit_book_path(params[:id]) do
+          編集

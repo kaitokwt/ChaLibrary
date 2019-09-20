@@ -2,6 +2,7 @@
   height: 100vh;
   width: 200px;
   float: left;
+  border-right: 1px solid;
   .left-header {
     height: 80px;
     background-color: grey;
@@ -12,10 +13,11 @@
   padding: 0 10px;
   background-color: #fcfcfc;
   height: calc(100vh - 80px);
+  overflow: scroll;
   .menu {
     .books {
       .book {
-        p {
+        &__icon {
           cursor: pointer; padding: 10px;
         }
         &__title {

@@ -1,0 +1,26 @@
+.main-contents {
+  height: calc(100vh - 80px);
+  &__title {
+    margin: 10px;
+    &__book {
+      margin: 15px 0;
+      height: 50px;
+      background-color: cadetblue;
+    }
+    &__chara {
+      background-color: cadetblue;
+    }
+  }
+  .main-content {
+    width: 100%;
+    .introduce {
+      background-color: #fafafa;
+      width: 400px;
+      height: 100px;
+      padding: 10px;
+      margin: 20px auto;
+      border: 1px solid;
+      border-radius: 5px;
+    }
+  }
+}

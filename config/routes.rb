@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'books#index'
 
   resources :users, only: [:edit, :update]
-  resources :books, only: [:index, :show, :new, :create] do
+  resources :books, only: [:index, :show, :new, :create, :edit, :update] do
     resources :characters, only: [:index, :create]
   end
 end

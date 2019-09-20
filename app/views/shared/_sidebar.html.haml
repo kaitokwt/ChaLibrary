@@ -1,16 +1,18 @@
-#backframe
-  .left-contents
-    .left-header
-      .left-header__adress
-        top
-    .menus
-      .menu
-        .books
-          - @books.each do |book|
-            %ul.book
-              %li
-                %p.book__title
+.left-contents
+  .left-header
+    .left-header__adress
+      top
+  .menus
+    .menu
+      .books
+        - @books.each do |book|
+          %ul.book
+            %li
+              %p.book__title
+                = link_to book_path(book.id) do
                   = book.title
+                .book__icon
+                  = fa_icon "plus-square"
                 %ul.book__character
                   %li.book__characters--name
                     test man

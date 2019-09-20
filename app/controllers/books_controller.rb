@@ -1,9 +1,13 @@
 class BooksController < ApplicationController
+  before_action :set_book, only: [:edit, :update]
+
   def index
-    @books = Book.all
+    @books = Book.with_attached_image
   end
 
   def show
+    @books = Book.with_attached_image
+    @book = Book.find(params[:id])
   end
 
   def new
@@ -19,8 +23,21 @@ class BooksController < ApplicationController
     end
   end
 
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book.update(book_params)
+    redirect_to book_path(@book.id)
+  end
+
   private
   def book_params
     params.require(:book).permit(:title, :image).merge(user_id: current_user.id)
+  end
+
+  def set_book
+    @book = Book.find(params[:id])
   end
 end
