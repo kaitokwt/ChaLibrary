@@ -1,0 +1,16 @@
+.wrapper
+  #backframe
+    = render 'shared/sidebar'
+    .main
+      = render 'shared/header'
+      .main-contents
+        .main-content
+          .book-image
+            - if @book.image.attached?
+              // 画像が登録されている場合の処理
+              = image_tag(rails_blob_path(@book.image), size: "250x250")
+            - else
+              // 画像が登録されていない場合の処理
+              = image_tag("noimage.png", size: "250x250")
+          .book-title
+            = @book.title
