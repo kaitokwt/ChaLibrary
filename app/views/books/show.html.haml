@@ -5,6 +5,9 @@
       = render 'shared/header'
       .main-contents
         .main-content
+          .book-title
+            %h2 本のタイトル
+            = @book.title
           .book-image
             - if @book.image.attached?
               // 画像が登録されている場合の処理
@@ -12,5 +15,3 @@
             - else
               // 画像が登録されていない場合の処理
               = image_tag("noimage.png", size: "250x250")
-          .book-title
-            = @book.title

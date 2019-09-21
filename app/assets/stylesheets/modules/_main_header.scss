@@ -4,7 +4,6 @@
   float: left;
   .main-header {
     height: 80px;
-    border-bottom: 1px solid;
     .personal {
       height: 30px;
       text-align: right;
@@ -26,6 +25,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 10px;
+      border: 1px solid;
       .search {
         &__filed {
           margin: 10px;
@@ -37,10 +37,12 @@
         }
       }
       .navimenu {
-        width: 80px;
         margin: 10px;
+        display: flex;
+        justify-content: space-between;
+        &__home{
+        }
         &__post {
-          float: left;
           margin: 0 5px;
         }
       }

@@ -11,12 +11,13 @@
               %p.book__title
                 = link_to book_path(book.id) do
                   = book.title
-                .book__icon
+                .book__icon{data: {book: {id: book.id}}}
                   = fa_icon "plus-square"
                 %ul.book__character
-                  %li.book__characters--name
+                  %li.book__character--name
                     test man
-                  %li.book__characters--name
+                  %li.book__character--name
                     sample man
-                  %li.book__characters--name
+                  %li.book__character--name
                     debug  man
+        .space

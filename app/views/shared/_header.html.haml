@@ -2,22 +2,25 @@
   .personal
     .personal__box
       %ul
-        %li.login-name
-          = current_user.name
-        %li.create-acount
-          = link_to new_user_registration_path do
-            アカウント作成
-        %li.log-in
-          = link_to new_user_session_path do
-            ログイン
+        - unless user_signed_in?
+          %li.create-acount
+            = link_to 'アカウント作成', new_user_registration_path
+          %li.log-in
+            = link_to 'ログイン', new_user_session_path
+        - else
+          %li.login-name
+            = current_user.name
+          %li.log-out
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete
   .naviframe
     .search
-      %input.search__filed
+      %input.search__filed{placeholder: '機能してません'}
       .search__btn 検索
     .navimenu
+      .navimenu__home
+        = link_to 'ホーム', root_path
       .navimenu__post
-        = link_to new_book_path do
-          投稿
-      .navimenu__edit
-        = link_to edit_book_path(params[:id]) do
-          編集
+        = link_to '投稿', new_book_path
+      - if @book.present?
+        .navimenu__edit
+          = link_to '編集', edit_book_path(@book)
