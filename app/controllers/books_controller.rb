@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:edit, :update]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @books = Book.with_attached_image
@@ -17,19 +18,18 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to root_path
+      redirect_to book_path(@book)
     else
       render :new
     end
   end
 
   def edit
-    @book = Book.find(params[:id])
   end
 
   def update
     @book.update(book_params)
-    redirect_to book_path(@book.id)
+    redirect_to book_path(@book)
   end
 
   private
@@ -39,5 +39,9 @@ class BooksController < ApplicationController
 
   def set_book
     @book = Book.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to root_path unless user_signed_in?
   end
 end

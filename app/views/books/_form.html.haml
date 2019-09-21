@@ -1,0 +1,19 @@
+= form_with(model: book, local: true) do |f|
+  .book-form__label
+    = f.label :title, '本のタイトル'
+    .book-form__title
+      = f.text_field :title
+  .book-form__label
+    = f.label :image, '本の画像'
+    .book-image
+      - if book.image.attached?
+        // 画像が登録されている場合の処理
+        = image_tag(rails_blob_path(book.image), size: "250x250", id: 'img_prev')
+      - else
+        // 画像が登録されていない場合の処理
+        = image_tag("noimage.png", size: "250x250", id: 'img_prev')
+    .book-form__file-filed
+      = f.file_field :image, id: 'book_img'
+  = f.submit
+.back-btn
+  = link_to '戻る', :back

@@ -1,11 +1,2 @@
 .book-form
-  = form_with(model: @book, local: true) do |f|
-    .book-form__label
-      = f.label :title, '本のタイトル'
-      .book-form__title
-        = f.text_field :title
-    .book-form__label
-      = f.label :image, '本の画像'
-      .book-form__file-filed
-        = f.file_field :image
-    = f.submit
+    = render 'books/form', book: @book

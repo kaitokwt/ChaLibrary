@@ -41,7 +41,8 @@
     }
 
     .btn {
-      margin-top: 20px;
+      margin: 20px 40px 0 0;
+      width: 70px;
       color: #fff;
       background-color: #ccc;
       font-size: 14px;
@@ -69,6 +70,10 @@
         letter-spacing: 1px;
       }
     }
+  }
+
+  .devise-menu {
+    display: flex;
   }
 
   .btn {
