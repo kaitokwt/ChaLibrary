@@ -10,7 +10,7 @@
             %li
               %p.book__title
                 = link_to book_path(book.id) do
-                  = book.title
+                  = simple_format(book.title)
                 .book__icon{data: {book: {id: book.id}}}
                   = fa_icon "plus-square"
                 %ul.book__character

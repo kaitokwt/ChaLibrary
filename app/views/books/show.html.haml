@@ -7,11 +7,11 @@
         .main-content
           .book-title
             %h2 本のタイトル
-            = @book.title
+            = simple_format(@book.title)
           .book-image
             - if @book.image.attached?
-              // 画像が登録されている場合の処理
-              = image_tag(rails_blob_path(@book.image), size: "250x250")
+              // 画像が登録されている場合の処理、くり抜いてる
+              = image_tag(rails_blob_path(@book.image), resize:"640x640^",crop:"640x640+0+0",gravity: :center)
             - else
               // 画像が登録されていない場合の処理
               = image_tag("noimage.png", size: "250x250")
